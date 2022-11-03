@@ -9,7 +9,7 @@
 </head>
 <body>
 
-	<jsp:include page="../menu.jsp"></jsp:include>
+	<jsp:include page="../header.jsp"></jsp:include>
 	
 	<div class="container mt-3">
 	  <h3>Clientes: ${listagem.size()}</h3>
@@ -37,5 +37,8 @@
 	    </tbody>
 	  </table>
 	</div>
+	
+	<jsp:include page="../footer.jsp"></jsp:include>
+	
 </body>
 </html>

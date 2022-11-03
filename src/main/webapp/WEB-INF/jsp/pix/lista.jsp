@@ -9,7 +9,7 @@
 </head>
 <body>
 
-	<jsp:include page="../menu.jsp"></jsp:include>
+	<jsp:include page="../header.jsp"></jsp:include>
 
 	<div class="container mt-3">
 	  <h3>PIX: ${listagem.size()}</h3>

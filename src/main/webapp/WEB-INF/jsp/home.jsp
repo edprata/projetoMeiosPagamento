@@ -8,7 +8,12 @@
 </head>
 <body>
 
-<jsp:include page="menu.jsp"></jsp:include>
+<jsp:include page="header.jsp"></jsp:include>
+
+<br/><br/>
+<h4>Welcome!</h4>
+
+<jsp:include page="footer.jsp"></jsp:include>
 
 </body>
 </html>
