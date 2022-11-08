@@ -13,6 +13,8 @@
 	
 	<div class="container mt-3">
 	  <h3>Cartões de Crédito: ${listagem.size()}</h3>
+	  
+	  <h4><a href="/cartaoCredito/incluir">Novo Cartão de Crédito</a></h4>
 
 	  <table class="table table-striped">
 	    <thead>

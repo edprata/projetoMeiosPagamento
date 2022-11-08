@@ -5,24 +5,24 @@
 <head>
 	<meta charset="ISO-8859-1">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
-	<title>Cadastramento de PIX</title>
+	<title>Cadastramento de Usuário</title>
 </head>
 <body>
 
 	<jsp:include page="../header.jsp"></jsp:include>
 
 	<div class="container mt-3">
-	  <h3>PIX: ${listagem.size()}</h3>
+	  <h3>Usuário: ${listagem.size()}</h3>
 	  
-	  <h4><a href="/pix/incluir">Novo PIX</a></h4>
+	  <h4><a href="/usuario/incluir">Novo Usuário</a></h4>
 
 	  <table class="table table-striped">
 	    <thead>
 	      <tr>
 	        <th>ID</th>
-	        <th>Número Transação</th>
-	        <th>Chave PIX</th>
-	        <th>Descrição</th>
+	        <th>Nome</th>
+	        <th>E-mail</th>
+	        <th>Senha</th>
 	        <th></th>
 	      </tr>
 	    </thead>
@@ -30,10 +30,10 @@
 		  <c:forEach var="e" items="${listagem}">
 		      <tr>
 				<td>${e.id}</td>
-		        <td>${e.numeroTransacao}</td>
-		        <td>${e.chavePix}</td>
-		        <td>${e.descricao}</td>
-		        <td><a href="/pix/${e.id}/excluir">excluir</a></td>
+		        <td>${e.nome}</td>
+		        <td>${e.email}</td>
+		        <td>${e.senha}</td>
+		        <td><a href="/usuario/${e.id}/excluir">excluir</a></td>
 		      </tr>
 	      </c:forEach>
 	    </tbody>

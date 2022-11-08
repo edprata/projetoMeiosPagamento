@@ -13,6 +13,8 @@
 
 	<div class="container mt-3">
 	  <h3>Pagamentos: ${listagem.size()}</h3>
+	  
+	  <h4><a href="/pagamento/incluir">Novo Pagamento</a></h4>
 
 	  <table class="table table-striped">
 	    <thead>

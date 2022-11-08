@@ -1,11 +1,13 @@
 package com.pagamentos.model.domain;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -14,35 +16,33 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "tcliente")
+@Table(name = "tusuario")
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
-public class Cliente {
+public class Usuario {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String nome;
-	private String numeroDocumento;
 	private String email;
+	private String senha;
 	
-	@ManyToOne
+	@OneToMany
 	@JoinColumn(name="idUsuario")
-	private Usuario usuario;
+	private List<Cliente> clientes;
 	
-	public Cliente(String nome, String numeroDocumento, String email) {
-		super();
-		this.nome = nome;
-		this.numeroDocumento = numeroDocumento;
-		this.email = email;
+	public Usuario(Long id) {
+		this.id = id;
 	}
-	
-	public Cliente(String nome, String numeroDocumento, String email, Usuario usuario) {
-		this(nome, numeroDocumento, email);
-		this.usuario = usuario;
+
+	public Usuario(String nome, String email, String senha) {
+		this.nome = nome;
+		this.email = email;
+		this.senha = senha;
 	}
 
 }

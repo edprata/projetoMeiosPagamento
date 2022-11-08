@@ -5,7 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
+import com.pagamentos.model.domain.Pagamento;
 import com.pagamentos.model.service.PagamentoService;
 
 
@@ -14,6 +16,17 @@ public class PagamentoController {
 
 	@Autowired
 	private PagamentoService pagamentoService;
+	
+	@GetMapping(value = "/pagamento/incluir")
+	public String incluir() {
+		return "pagamento/incluir";
+	}
+
+	@PostMapping(value = "/pagamento/incluir")
+	public String incluir(Pagamento pagamento) {
+		pagamentoService.incluir(pagamento);
+		return "redirect:/pagamento/lista";
+	}
 
 	@GetMapping(value = "/pagamento/lista")
 	public String telaLista(Model model) {
