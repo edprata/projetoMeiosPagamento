@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.pagamentos.model.domain.Usuario;
@@ -27,7 +26,7 @@ public class UsuarioController {
 	@PostMapping(value = "/cep")
 	public String obterCep(Model model, @RequestParam String cep){
 		model.addAttribute("endereco", enderecoService.obterCep(cep));
-		return "usuario/cadastro";
+		return "usuario/incluir";
 	}
 	
 	@GetMapping(value = "/usuario/incluir")
@@ -36,7 +35,7 @@ public class UsuarioController {
 	}
 
 	@PostMapping(value = "/usuario/incluir")
-	public String incluir(@RequestBody Usuario usuario) {
+	public String incluir(Usuario usuario) {
 		usuarioService.incluir(usuario);
 		return "redirect:/usuario/lista";
 	}

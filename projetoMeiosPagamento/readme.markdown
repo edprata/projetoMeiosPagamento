@@ -46,5 +46,8 @@ Mais informações podem ser obtidas nos links abaixo:
 
 ### 5. Acesso:
 
-* A aplicação está rodando na porta 8081 e pode ser acessada pelo endereço [http://localhost:8081/](http://localhost:8081/)
+* A aplicação está rodando na porta 8081
+* Acessar pelo endereço [http://localhost:8081/login](http://localhost:8081/login)
+* Login jaco@gmail.com
+* Senha 111
 

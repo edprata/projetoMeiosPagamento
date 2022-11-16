@@ -30,7 +30,7 @@ public class AppController {
 	}
 	
 	@PostMapping(value = "/login")
-	public String login(Model model, @RequestParam String email, @RequestParam String senha) {
+	public String login(Model model, HttpSession session, @RequestParam String email, @RequestParam String senha) {
 		
 		Usuario usuario = usuarioService.validar(email, senha);
 		
@@ -38,7 +38,8 @@ public class AppController {
 			return "login";	
 		}
 		
-		model.addAttribute("usuario", usuario);
+		session.setAttribute("user", usuario);
+		model.addAttribute("user", usuario);
 		return "home";
 	}
 	

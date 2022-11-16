@@ -14,7 +14,7 @@
 	<div class="container mt-3">
 
 	<h2>Cartão de Crédito</h2>
-	  <form action="/boleto/incluir" method="post">
+	  <form action="/cartaoCredito/incluir" method="post">
 
 	    <div class="form-group">
 	      <label>Número Cartão:</label>

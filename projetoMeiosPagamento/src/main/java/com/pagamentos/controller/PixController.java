@@ -24,6 +24,7 @@ public class PixController {
 
 	@PostMapping(value = "/pix/incluir")
 	public String incluir(Pix pix) {
+		System.out.println("PIX=" + pix);
 		pixService.incluir(pix);
 		return "redirect:/pix/lista";
 	}
