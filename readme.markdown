@@ -37,7 +37,7 @@ Mais informações podem ser obtidas nos links abaixo:
 
 * O projeto está utilizando o H2, que é um banco relacional embarcado e está configurado para rodar em memória apenas.
 * Você pode acessar o banco pelo browser após executar a aplicação e ver as tabelas criadas, assim como seus conteúdos.
-* Para isso, acesso o endereço [http://localhost:8081/h2console/](http://localhost:8081/h2console/) e forneça os seguintes dados:
+* Para isso, acesso o endereço [http://localhost:8083/h2console/](http://localhost:8083/h2console/) e forneça os seguintes dados:
 
 ```
 	JDBC URL: jdbc:h2:mem:testdb
