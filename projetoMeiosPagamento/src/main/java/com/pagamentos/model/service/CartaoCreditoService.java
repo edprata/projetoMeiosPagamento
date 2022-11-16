@@ -5,25 +5,25 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.pagamentos.clients.CartaoCreditoClient;
 import com.pagamentos.model.domain.CartaoCredito;
-import com.pagamentos.model.repository.CartaoCreditoRepository;
 
 
 @Service
 public class CartaoCreditoService {
 	
 	@Autowired
-	private CartaoCreditoRepository CartaoCreditoRepository;
+	private CartaoCreditoClient cartaoCreditoClient;
 
 	public void incluir(CartaoCredito CartaoCredito) {
-		CartaoCreditoRepository.save(CartaoCredito);
+		cartaoCreditoClient.incluir(CartaoCredito);
 	}
 	
 	public void excluir(Long id) {
-		CartaoCreditoRepository.deleteById(id);
+		cartaoCreditoClient.excluir(id);
 	}
 	
 	public Collection<CartaoCredito> obterLista(){
-		return (Collection<CartaoCredito>) CartaoCreditoRepository.findAll();
+		return (Collection<CartaoCredito>) cartaoCreditoClient.listar();
 	}		
 }

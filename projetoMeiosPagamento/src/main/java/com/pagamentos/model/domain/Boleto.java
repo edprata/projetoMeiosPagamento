@@ -3,19 +3,10 @@ package com.pagamentos.model.domain;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-
-@Entity
-@Table(name = "tboleto")
 
 @Data
 @NoArgsConstructor
@@ -23,8 +14,6 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = false)
 public class Boleto extends MeioPagamento {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String numeroBoleto;
 	private Integer numeroBanco;
@@ -40,9 +29,9 @@ public class Boleto extends MeioPagamento {
 			Integer numeroAgencia, 
 			Integer numeroConta,
 			List<Pagamento> pagamentos,
-			Usuario usuario
+			Long idUsuario
 	) {
-		super(valorPagamento, dataHoraPagamento, ativo, pagamentos, usuario);
+		super(valorPagamento, dataHoraPagamento, ativo, pagamentos, idUsuario);
 		this.numeroBoleto = numeroBoleto;
 		this.numeroBanco = numeroBanco;
 		this.numeroAgencia = numeroAgencia;

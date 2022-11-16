@@ -1,4 +1,4 @@
-package com.pagamentos.model.domain;
+package com.pagamentos.config;
 
 import java.io.Serializable;
 

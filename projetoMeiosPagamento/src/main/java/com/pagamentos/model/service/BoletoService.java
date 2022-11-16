@@ -5,25 +5,29 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.pagamentos.clients.BoletoClient;
 import com.pagamentos.model.domain.Boleto;
-import com.pagamentos.model.repository.BoletoRepository;
 
 
 @Service
 public class BoletoService {
 	
 	@Autowired
-	private BoletoRepository BoletoRepository;
+	private BoletoClient boletoClient;
 
 	public void incluir(Boleto Boleto) {
-		BoletoRepository.save(Boleto);
+		boletoClient.incluir(Boleto);
 	}
 	
 	public void excluir(Long id) {
-		BoletoRepository.deleteById(id);
+		boletoClient.excluir(id);
+	}
+	
+	public void excluirTodos() {
+		boletoClient.excluirTodos();
 	}
 	
 	public Collection<Boleto> obterLista(){
-		return (Collection<Boleto>) BoletoRepository.findAll();
+		return (Collection<Boleto>) boletoClient.listar();
 	}		
 }

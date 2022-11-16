@@ -27,8 +27,9 @@ public class ClienteController {
 
 	@PostMapping(value = "/cliente/incluir")
 	public String incluir(Cliente cliente, @SessionAttribute("user") Usuario usuario) {
-		cliente.setUsuario(usuario);
+		cliente.setIdUsuario(usuario.getId());
 		clienteService.incluir(cliente);
+		System.out.println("Incluido!!!");
 		return "redirect:/cliente/lista";
 	}
 

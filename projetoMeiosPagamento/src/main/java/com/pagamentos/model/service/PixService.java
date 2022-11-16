@@ -5,25 +5,26 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.pagamentos.clients.PixClient;
 import com.pagamentos.model.domain.Pix;
-import com.pagamentos.model.repository.PixRepository;
 
 
 @Service
 public class PixService {
 	
 	@Autowired
-	private PixRepository PixRepository;
+	private PixClient pixClient;
 
-	public void incluir(Pix Pix) {
-		PixRepository.save(Pix);
+	public void incluir(Pix pix) {
+		System.out.println("PIX=" + pix);
+		pixClient.incluir(pix);
 	}
 	
 	public void excluir(Long id) {
-		PixRepository.deleteById(id);
+		pixClient.excluir(id);
 	}
 	
 	public Collection<Pix> obterLista(){
-		return (Collection<Pix>) PixRepository.findAll();
+		return (Collection<Pix>) pixClient.listar();
 	}		
 }

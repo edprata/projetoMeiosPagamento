@@ -5,31 +5,31 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.pagamentos.clients.MeioPagamentoClient;
 import com.pagamentos.model.domain.MeioPagamento;
 import com.pagamentos.model.domain.Usuario;
-import com.pagamentos.model.repository.MeioPagamentoRepository;
 
 
 @Service
 public class MeioPagamentoService {
 	
 	@Autowired
-	private MeioPagamentoRepository meioPagamentoRepository;
+	private MeioPagamentoClient meioPagamentoClient;
 
 	public void incluir(MeioPagamento MeioPagamento) {
-		meioPagamentoRepository.save(MeioPagamento);
+		meioPagamentoClient.incluir(MeioPagamento);
 	}
 	
 	public void excluir(Long id) {
-		meioPagamentoRepository.deleteById(id);
+		meioPagamentoClient.excluir(id);
 	}
 	
 	public Collection<MeioPagamento> obterLista(){
-		return (Collection<MeioPagamento>) meioPagamentoRepository.findAll();
+		return (Collection<MeioPagamento>) meioPagamentoClient.listar();
 	}		
 
 	public Collection<MeioPagamento> obterLista(Usuario usuario){
-		return (Collection<MeioPagamento>) meioPagamentoRepository.listar(usuario.getId());
+		return (Collection<MeioPagamento>) meioPagamentoClient.listar(usuario.getId());
 	}
 
 }

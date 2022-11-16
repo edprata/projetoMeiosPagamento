@@ -37,7 +37,7 @@ public class PagamentoController {
 
 	@PostMapping(value = "/pagamento/incluir")
 	public String incluir(Pagamento pagamento, @SessionAttribute("user") Usuario usuario) {
-		pagamento.setUsuario(usuario);
+		pagamento.setIdUsuario(usuario.getId());
 		pagamentoService.incluir(pagamento);
 		return "redirect:/pagamento/lista";
 	}

@@ -7,14 +7,10 @@ import org.springframework.stereotype.Service;
 
 import com.pagamentos.clients.IUsuarioClient;
 import com.pagamentos.model.domain.Usuario;
-import com.pagamentos.model.repository.UsuarioRepository;
 
 
 @Service
 public class UsuarioService {
-	
-	@Autowired
-	private UsuarioRepository usuarioRepository;
 	
 	@Autowired
 	private IUsuarioClient usuarioClient;
@@ -26,9 +22,9 @@ public class UsuarioService {
 	public void excluir(Long id) {
 		usuarioClient.excluir(id);
 	}
-	
+
 	public Collection<Usuario> listar(){
-		return (Collection<Usuario>) usuarioRepository.findAll();
+		return (Collection<Usuario>) usuarioClient.listar();
 	}
 	
 	public Usuario findByEmail(String email) {

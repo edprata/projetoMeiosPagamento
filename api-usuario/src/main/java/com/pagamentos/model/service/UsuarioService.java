@@ -23,6 +23,10 @@ public class UsuarioService {
 		usuarioRepository.deleteById(id);
 	}
 	
+	public void excluirTodos() {
+		usuarioRepository.deleteAll();
+	}
+	
 	public Collection<Usuario> listar(){
 		return (Collection<Usuario>) usuarioRepository.findAll();
 	}

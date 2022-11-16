@@ -3,19 +3,10 @@ package com.pagamentos.model.domain;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-
-@Entity
-@Table(name = "tpix")
 
 @Data
 @NoArgsConstructor
@@ -23,8 +14,6 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = false)
 public class Pix extends MeioPagamento {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String numeroTransacao;
 	private String chavePix;
@@ -38,9 +27,9 @@ public class Pix extends MeioPagamento {
 			String chavePix,
 			String descricao,
 			List<Pagamento> pagamentos,
-			Usuario usuario
+			Long idUsuario
 	) {
-		super(valorPagamento, dataHoraPagamento, ativo, pagamentos, usuario);
+		super(valorPagamento, dataHoraPagamento, ativo, pagamentos, idUsuario);
 		this.numeroTransacao = numeroTransacao;
 		this.chavePix = chavePix;
 		this.descricao = descricao;
