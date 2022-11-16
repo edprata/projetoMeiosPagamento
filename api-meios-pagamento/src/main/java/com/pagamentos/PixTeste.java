@@ -21,15 +21,11 @@ public class PixTeste implements ApplicationRunner {
 	@Autowired
 	private PixService pixService;
 	
-	//@Autowired
-	//private UsuarioService usuarioService;
-
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		
 		System.out.print("## Cadastramento de PIX... ");
 		List<Pagamento> pagamentos = new ArrayList<>();
-		//Usuario usuario = usuarioService.findByEmail("jaco@gmail.com");
 		Long idUser = 1L;
 		pixService.excluirTodos();
 		pixService.incluir(new Pix(111.00, LocalDateTime.now(), true, "1111111", "1111111", "Teste1", pagamentos, idUser));

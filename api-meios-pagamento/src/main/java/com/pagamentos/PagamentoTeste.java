@@ -25,15 +25,11 @@ public class PagamentoTeste implements ApplicationRunner {
 	@Autowired
 	private ClienteService clienteService;
 	
-	//@Autowired
-	//private UsuarioService usuarioService;
-
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		
 		System.out.print("## Cadastramento de Pagamento... ");
 		Cliente cliente = clienteService.findByEmail("isaias@gmail.com");
-		//Usuario usuario = usuarioService.findByEmail("jaco@gmail.com");
 		Long idUser = 1L;
 		List<MeioPagamento> lista = new ArrayList<>();
 		pagamentoService.excluirTodos();

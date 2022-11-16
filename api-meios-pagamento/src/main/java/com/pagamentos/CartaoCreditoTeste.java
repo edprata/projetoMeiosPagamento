@@ -21,15 +21,11 @@ public class CartaoCreditoTeste implements ApplicationRunner {
 	@Autowired
 	private CartaoCreditoService cartaoCreditoService;
 	
-	//@Autowired
-	//private UsuarioService usuarioService;
-	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		
 		System.out.print("## Cadastramento de Cartão de Crédito... ");
 		List<Pagamento> pagamentos = new ArrayList<>();
-		//Usuario usuario = usuarioService.findByEmail("jaco@gmail.com");
 		Long idUser = 1L;
 		cartaoCreditoService.excluirTodos();
 		cartaoCreditoService.incluir(new CartaoCredito(111.00, LocalDateTime.now(), true, "1111111", "Katia", "10/27", pagamentos, idUser));

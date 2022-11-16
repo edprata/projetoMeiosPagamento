@@ -21,15 +21,11 @@ public class BoletoTeste implements ApplicationRunner {
 	@Autowired
 	private BoletoService boletoService;
 	
-	//@Autowired
-	//private UsuarioService usuarioService;
-
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		
 		System.out.print("## Cadastramento de Boletos... ");
 		List<Pagamento> pagamentos = new ArrayList<>();
-		//Usuario usuario = usuarioService.findByEmail("jaco@gmail.com");
 		Long idUser = 1L;
 		boletoService.excluirTodos();
 		boletoService.incluir(new Boleto(111.00, LocalDateTime.now(), true, "1111111", 111, 111, 111, pagamentos, idUser));

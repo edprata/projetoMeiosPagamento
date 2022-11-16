@@ -21,15 +21,11 @@ public class MeioPagamentoTeste implements ApplicationRunner {
 	@Autowired
 	private MeioPagamentoService meioPagamentoService;
 	
-	//@Autowired
-	//private UsuarioService usuarioService;
-	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		
 		System.out.print("## Cadastramento de Meio de Pagamento... ");
 		List<Pagamento> pagamentos = new ArrayList<>();
-		//Usuario usuario = usuarioService.findByEmail("jaco@gmail.com");
 		Long idUser = 1L;
 		meioPagamentoService.excluirTodos();
 		meioPagamentoService.incluir(new MeioPagamento(111.00, LocalDateTime.now(), true, pagamentos, idUser));

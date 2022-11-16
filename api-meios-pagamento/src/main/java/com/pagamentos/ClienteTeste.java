@@ -16,14 +16,10 @@ public class ClienteTeste implements ApplicationRunner {
 	@Autowired
 	private ClienteService clienteService;
 	
-	//@Autowired
-	//private UsuarioService usuarioService;
-	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		
 		System.out.print("## Cadastramento de Cliente... ");
-		//Usuario usuario = usuarioService.findByEmail("jaco@gmail.com");
 		Long idUser = 1L;
 		clienteService.excluirTodos();
 		clienteService.incluir(new Cliente("Isaias", "1111111", "isaias@gmail.com", idUser));
