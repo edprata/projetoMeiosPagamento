@@ -1,0 +1,39 @@
+server:
+  port: 8083
+
+logging:
+  level:
+    root: warn
+    org:
+      springframework:
+        web: warn
+      hibernate: error
+    com:
+      pagamentos: info
+  pattern:
+    console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%5p) %clr(${PID:- }){magenta} %clr(-){faint} %clr([%20.20t]){faint} %clr(%34.34logger{33}){cyan} %clr(:){red} %m%n%wEx"
+
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: false
+    hibernate:
+      ddl-auto: create
+      use-new-id-generator-mappings: true
+    properties:
+      hibernate:
+        show_sql: false
+        use_sql_comments: false
+        format_sql: false
+  h2:
+    console:
+      enabled: true
+      path: /h2console
+
+
