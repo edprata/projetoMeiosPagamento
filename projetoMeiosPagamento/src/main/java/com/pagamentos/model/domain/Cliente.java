@@ -29,4 +29,8 @@ public class Cliente {
 		this.idUsuario = idUsuario;
 	}
 
+	public void setId(String id) {
+		this.id = Long.valueOf(id);
+	}
+	
 }

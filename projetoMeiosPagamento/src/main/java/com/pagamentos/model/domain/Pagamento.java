@@ -3,6 +3,8 @@ package com.pagamentos.model.domain;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -16,6 +18,7 @@ public class Pagamento {
 
 	private Long id;
 	private Long numeroTransacao;
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
 	private LocalDateTime dataHoraTransacao;
 	private Double valorTotal;
 	private Cliente cliente;

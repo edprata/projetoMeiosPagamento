@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -20,7 +21,7 @@
 	    <thead>
 	      <tr>
 	        <th>ID</th>
-	        <th>Número Transação</th>
+	        <th>N&uacute;mero Transa&ccedil;&atilde;o</th>
 	        <th>Data</th>
 	        <th>Total</th>
 	        <th>Cliente</th>
@@ -33,7 +34,7 @@
 		      <tr>
 				<td>${e.id}</td>
 		        <td>${e.numeroTransacao}</td>
-		        <td>${e.dataHoraTransacao}</td>
+		        <td><fmt:parseDate value="${e.dataHoraTransacao}" pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTime" type="both"/><fmt:formatDate pattern="dd/MM/yyyy HH:mm" value="${parsedDateTime}"/></td>
 		        <td>${e.valorTotal}</td>
 		        <td>${e.cliente.nome}</td>
 		        <td>${e.meiosPagamento.size()}</td>

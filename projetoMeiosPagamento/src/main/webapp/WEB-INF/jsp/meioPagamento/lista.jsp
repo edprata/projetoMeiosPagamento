@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -31,7 +32,7 @@
 		      <tr>
 				<td>${e.id}</td>
 		        <td>${e.valorPagamento}</td>
-		        <td>${e.dataHoraPagamento}</td>
+		        <td><fmt:parseDate value="${e.dataHoraPagamento}" pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTime" type="both"/><fmt:formatDate pattern="dd/MM/yyyy HH:mm" value="${parsedDateTime}"/></td>
 		        <td>${e.ativo}</td>
 		        <td><a href="/meioPagamento/${e.id}/excluir">excluir</a></td>
 		      </tr>

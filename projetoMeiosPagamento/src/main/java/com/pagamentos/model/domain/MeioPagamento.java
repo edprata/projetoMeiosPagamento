@@ -3,6 +3,8 @@ package com.pagamentos.model.domain;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -16,6 +18,7 @@ public class MeioPagamento {
 	
 	private Long id;
 	private Double valorPagamento;
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
 	private LocalDateTime dataHoraPagamento;
 	private Boolean ativo;
 	private List<Pagamento> pagamentos;
@@ -32,6 +35,10 @@ public class MeioPagamento {
 	
 	public String getNome() {
 		return id + " " + this.getClass().getSimpleName();
+	}
+	
+	public void setId(String id) {
+		this.id = Long.valueOf(id);
 	}
 
 }

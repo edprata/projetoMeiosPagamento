@@ -33,7 +33,7 @@
 
 	    <div class="form-group">
 	      <label>Cliente:</label>
-	      <select name="cliente" class="form-control">
+	      <select name="cliente.id" class="form-control">
 	      	<c:forEach var="e" items="${clientes}">
 	      		<option value="${e.id}">${e.nome}</option>
 	      	</c:forEach>
@@ -44,7 +44,7 @@
 	      <label>Meios de Pagamento:</label>
 	      	<c:forEach var="e" items="${meiosPagamento}">
 				<div class="form-check">
-				  <input class="form-check-input" type="checkbox" name="meiosPagamento" value="${e.id}">
+				  <input class="form-check-input" type="checkbox" name="meiosPagamento.id" value="${e.id}">
 				  <label class="form-check-label"> ${e.nome}</label>
 				</div>	   
 			</c:forEach>
